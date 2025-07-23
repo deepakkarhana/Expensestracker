@@ -1,0 +1,11 @@
+<h2>Register</h2>
+
+<!-- Create a form that submits data to the server -->
+<form method="POST">
+  {% csrf_token %}     <!-- Protects against CSRF attacks -->
+  {{ form.as_p }}      <!-- Renders the registration form fields in paragraph tags -->
+  <button type="submit">Sign Up</button>
+</form>
+
+<!-- Link to login page for existing users -->
+<a href="{% url 'login' %}">Already have an account? Log in</a>
